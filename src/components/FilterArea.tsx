@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { ReqResponse } from "./ReqResponse";
-import { SugVeic } from "./SugVeic";
 
 // Tipos para a API
 type Marca = {
