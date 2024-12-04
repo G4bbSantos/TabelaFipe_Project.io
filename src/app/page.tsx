@@ -2,7 +2,6 @@
 
 import { FilterArea } from "@/components/FilterArea";
 import { HeaderPage } from "@/components/HeaderPage";
-import { SugVeic } from "@/components/SugVeic";
 import { TitleSec } from "@/components/TitleSec";
 
 export default function Home() {
