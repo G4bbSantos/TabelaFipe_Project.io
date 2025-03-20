@@ -146,16 +146,16 @@ export const FilterArea: React.FC = () => {
 
     return (
         <section className="w-full min-h-48 flex justify-center items-center flex-col">
-            <div className={`w-11/12 md:w-9/12 rounded-xl bg-zinc-700 flex flex-col gap-4 items-center py-3 px-5 ${
+            <div className={`w-full md:w-9/12 rounded-xl flex flex-col gap-4 items-center py-3 px-5 ${
                     divOculta ? "hidden" : "flex"
                 }`}>
-                <h3 className="text-lg font-light">Selecione o Tipo de Veículo</h3>
-                <div className="rounded-2xl bg-slate-50 py-1 px-1 flex">
+                <h3 className="text-xl font-light">Selecione o Tipo de Veículo</h3>
+                <div className="rounded-2xl py-1 px-1 flex w-full flex-col sm:flex-row gap-2 justify-evenly">
                     {["carros", "motos", "caminhoes"].map((tipo) => (
                         <button
                             key={tipo}
-                            className={`py-1 px-5 rounded-xl ${
-                                tipoVeiculo === tipo ? "bg-black text-white" : "text-black hover:underline"
+                            className={`min-w-36 py-1 px-4 rounded-xl lg:-mx-32 bg-white border border-black ${
+                                tipoVeiculo === tipo ? "bg-zinc-800 text-white" : "text-black hover:underline"
                             }`}
                             onClick={() => setTipoVeiculo(tipo as "carros" | "motos" | "caminhoes")}
                         >
@@ -163,12 +163,12 @@ export const FilterArea: React.FC = () => {
                         </button>
                     ))}
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-6 w-full">
+                <div className="flex flex-col gap-3 w-full md:gap-6 md:w-8/12 font-sans font-normal">
                     <div className="relative">
                         <input
                             type="text"
-                            className="rounded-xl px-2 py-1 text-black w-full placeholder:text-zinc-500"
-                            placeholder="Marca.."
+                            className="rounded-xl px-3 py-2 sm:py-3 sm:text-xl text-black w-full placeholder:text-zinc-500"
+                            placeholder="Buscar Marca.."
                             value={marcaInput}
                             onChange={handleMarcaChange}
                             onFocus={() => setSugestoesMarcas(marcas)}
@@ -192,8 +192,8 @@ export const FilterArea: React.FC = () => {
                     <div className="relative">
                         <input
                             type="text"
-                            className="rounded-xl px-2 py-1 text-black w-full disabled:bg-white disabled:placeholder:text-gray-400"
-                            placeholder="Modelo.."
+                            className="rounded-xl px-3 py-2 sm:py-3 sm:text-xl text-black w-full disabled:bg-white disabled:placeholder:text-gray-400"
+                            placeholder="Buscar Modelo.."
                             value={modeloInput}
                             onChange={handleModeloChange}
                             onFocus={() => setSugestoesModelos(modelos)}
@@ -218,8 +218,8 @@ export const FilterArea: React.FC = () => {
                     <div className="relative">
                         <input
                             type="text"
-                            className="rounded-xl px-2 py-1 text-black w-full disabled:bg-white disabled:text-gray-400"
-                            placeholder="Ano.."
+                            className="rounded-xl px-3 py-2 sm:py-3 sm:text-xl text-black w-full disabled:bg-white disabled:text-gray-400"
+                            placeholder="Buscar Ano.."
                             value={anoInput}
                             onChange={handleAnoChange}
                             onFocus={() => setSugestoesAnos(anos)}
@@ -241,15 +241,15 @@ export const FilterArea: React.FC = () => {
                         )}
                     </div>
 
-                    <button className="sm:col-span-3 px-4 py-1 bg-neutral-500 rounded-2xl w-full text-white active:bg-neutral-700" onClick={handleConsultarValor}>
+                    <button className="sm:col-span-3 px-4 py-2 bg-zinc-800 rounded-xl w-full border border-black text-white active:bg-neutral-700" onClick={handleConsultarValor}>
                         Consultar valor
                     </button>
                 </div>
             </div>
             {urlConsulta && (
-                <div className="w-11/12 md:w-9/12 rounded-xl border bg-zinc-700 flex flex-col items-center py-4 px-3 gap-5">
+                <div className="w-11/12 md:w-9/12 bg-slate-200 border border-black rounded-xl flex flex-col items-center py-4 px-3 gap-5">
                     <ReqResponse urlFinal={urlConsulta} />
-                    <button className="hover:text-slate-500" onClick={handleAreaAPI}>Voltar</button>
+                    <button className="bg-red-800 py-2 min-w-32 rounded-xl border border-black hover:text-slate-500" onClick={handleAreaAPI}>Voltar</button>
                 </div>
             )}
         </section>

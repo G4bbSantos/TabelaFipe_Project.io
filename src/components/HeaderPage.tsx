@@ -1,8 +1,8 @@
 export const HeaderPage = () => {
     return (
-        <header className="w-full min-h-12 dark:shadow-md shadow-zinc-950 bg-zinc-300/70 dark:bg-zinc-900/60 flex justify-between px-3 py-1 items-center">
+        <header className="w-full min-h-16 flex justify-between px-3 py-1 items-center">
             <div>
-                <h1 className="text-xl font-bold md:text-xl lg:text-2xl">MICarros</h1>
+                <h1 className="text-xl font-bold md:text-2xl lg:text-3xl">MICarros</h1>
             </div>
             <div className="hidden md:flex">
                 <ul className="flex flex-row gap-3">

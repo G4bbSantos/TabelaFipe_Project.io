@@ -44,7 +44,7 @@ export const ReqResponse: React.FC<ReqResponseProps> = ({ urlFinal }) => {
     }, [urlFinal]);
 
     return (
-        <section className="p-4 border rounded">
+        <section className="p-4 rounded text-zinc-900">
             <h3 className="text-lg font-bold mb-2">Informações da Tabela Fipe</h3>
             {isLoading ? (
                 <p>Carregando...</p>
